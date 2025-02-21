@@ -1,27 +1,37 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
+import Lista from "./lista.jsx";
+import Formulario from "./formulario.jsx";
+//import Acciones from "./Acciones.jsx";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
+function Home() {
+	const [queHacer, setQueHacer] = useState([])
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+	const addTarea = (titulo) => {
+		const nuevaTarea = {
+			label: titulo,
+			is_done: false,
+			id: Date.now()
+		}
+
+		setQueHacer([...queHacer, nuevaTarea])
+	}
+
+	const borrarTarea = (id) => {
+		setQueHacer(queHacer.filter((accion) => accion.id !== id))
+	}
+
+
+	return (
+		<>
+			<div>
+				<Formulario anadirTarea={addTarea} />
+			</div>
+			<div>
+				<Lista acciones={queHacer} deleteTask={borrarTarea} />
+			</div>
+
+		</>
 	);
 };
 
