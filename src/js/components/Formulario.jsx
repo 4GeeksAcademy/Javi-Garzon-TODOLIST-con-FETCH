@@ -7,7 +7,7 @@ function Formulario(props) {
   function crearTarea(e) {
     e.preventDefault()
 
-    props.anadirTarea(titulo)
+    props.addTarea(titulo)
 
     setTitulo("")
   }

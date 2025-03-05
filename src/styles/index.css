@@ -1,7 +1,7 @@
 head {
     margin: 20px 0;
     border: 10px;
-    border-top: 1px dashed #c6ee22a2;
+    border-top: 1px dashed #f34005a2;
   }
   
   
@@ -14,7 +14,7 @@ head {
     h5 {
       margin-bottom: 0;
       font-size: 24px;
-      color: green;
+      color: rgb(93, 95, 93);
     }
     ul {
       padding: 0;
@@ -39,7 +39,7 @@ head {
   body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.4em;
-    background: #87ee54;
+    background: #e8f1e4;
     color: #4d4d4d;
     min-width: 230px;
     max-width: 550px;
